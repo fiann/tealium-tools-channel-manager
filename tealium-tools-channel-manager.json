@@ -7,8 +7,8 @@
         "check_plugins" : {
             "title": "SiteCatalyst plugins",
             "description": "Check the version of the plugins installed in SiteCatalyst.",
-            "template": "https://tealium-tools.s3.amazonaws.com/tools/utagScrapeSend.html",
-            "js": "https://tealium-tools.s3.amazonaws.com/tools/utagScrapeSend.js",
+            "template": "https://raw.githubusercontent.com/fiann/tealium-tools-channel-manager/master/check_plugins-template.html",
+            "js": "https://raw.githubusercontent.com/fiann/tealium-tools-channel-manager/master/check_plugins-script.js",
             "remote_js": true,
             "remote_template": true
         }

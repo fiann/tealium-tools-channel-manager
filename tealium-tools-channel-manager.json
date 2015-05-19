@@ -1,0 +1,16 @@
+{
+    "id" : "check_channel_manager",
+    "icon_url" : "https://tealium-tools.s3.amazonaws.com/tools/logo.png",
+    "title": "Check Channel Manager",
+    "description": "This tool checks for the existence of the SiteCatalyst Channel Manager plugin.",
+    "scripts": {
+        "check_plugins" : {
+            "title": "SiteCatalyst plugins",
+            "description": "Check the version of the plugins installed in SiteCatalyst.",
+            "template": "https://tealium-tools.s3.amazonaws.com/tools/utagScrapeSend.html",
+            "js": "https://tealium-tools.s3.amazonaws.com/tools/utagScrapeSend.js",
+            "remote_js": true,
+            "remote_template": true
+        }
+    }
+}

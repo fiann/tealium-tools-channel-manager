@@ -1,16 +1,17 @@
 {
-    "id" : "check_channel_manager",
-    "icon_url" : "https://tealium-tools.s3.amazonaws.com/tools/logo.png",
-    "title": "Check Channel Manager",
-    "description": "This tool checks for the existence of the SiteCatalyst Channel Manager plugin.",
-    "scripts": {
-        "check_plugins" : {
-            "title": "SiteCatalyst plugins",
-            "description": "Check the version of the plugins installed in SiteCatalyst.",
-            "template": "https://raw.githubusercontent.com/fiann/tealium-tools-channel-manager/master/check_plugins-template.html",
-            "js": "https://raw.githubusercontent.com/fiann/tealium-tools-channel-manager/master/check_plugins-script.js",
-            "remote_js": true,
-            "remote_template": true
-        }
+  "id": "check_sitecat_plugins1",
+  "icon_url": "https://tealium-tools.s3.amazonaws.com/tools/logo.png",
+  "title": "Check SiteCatalyst Plugins",
+  "description": "This tool checks for the existence of various SiteCatalyst plugins.",
+  "scripts": {
+    "check_plugins": {
+      "title": "SiteCatalyst plugins",
+      "description": "Check the version of the plugins installed in SiteCatalyst.",
+      "button_label": "Scan plugins",
+      "template": "http://localhost:8080/check_plugins-template.html?123",
+      "js": "http://localhost:8080/check_plugins-script.js?123",
+      "remote_js": true,
+      "remote_template": true
     }
+  }
 }

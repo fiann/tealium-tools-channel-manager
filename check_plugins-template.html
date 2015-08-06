@@ -1,5 +1,27 @@
-<h4>SiteCatalyst plugins</h4>
+<script type="text/x-handlebars">
+  <h3>SiteCatalyst plugins detected</h4>
 
-<pre>{{this}}</pre>
+  <ul>
+    {{#each plugins_found}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
 
-{{#list this}}{{plugin_name}} {{plugin_version}}{{/list}}
+  <p>&nbsp;</p>
+
+  <h4>Plugins not detected on this page</h4>
+
+  <p>I also looked for:</p>
+
+  <ul>
+    {{#each plugins_not_found}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <p>&nbsp;</p>
+
+  <p>Want to add some more? Send your request to 
+    <a href="mailto:fiann@tealium.com">fiann@tealium.com</a>
+  </p>
+</script>

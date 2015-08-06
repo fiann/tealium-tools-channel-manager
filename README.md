@@ -3,6 +3,14 @@
 This is a custom Tealium Tool to check for some known plugins to Adobe Analytics
 (a.k.a. SiteCatalyst).
 
+## What plugins are supported?
+
+The list is growing. Currently I am checking for:
+
+ * Channel Manager plugin
+ * Form Analysis plugin
+ * and various utilities
+
 ## Installation
 
 If you are an existing Tealium customer and you have access to the Tealium Learning
@@ -45,4 +53,4 @@ Add this configuration data to the text box:
 }
 ```
 
-Click the Add button and you should be all set.
+Click the Add Custom Tool button and you should be all set.

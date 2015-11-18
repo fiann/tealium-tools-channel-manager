@@ -17,7 +17,8 @@ var plugins = {};
 
 plugins.channelManager = {
   name : "Channel Manager",
-  versions : {}
+  versions : {},
+  compatible : true
 };
 /*
  * channelManager v3.0 - Tracking External Traffic
@@ -73,7 +74,8 @@ plugins.channelManager.versions["2.0"] = new Function("a","b","c","d","e","f","g
 
 plugins.setupFormAnalysis = {
   name : "Form Analysis",
-  versions : {}
+  versions : {},
+  compatible : false
 };
 /*
  * Plugin: Form Analysis 2.2 (Success, Error, Abandonment)
@@ -87,7 +89,8 @@ plugins.setupFormAnalysis.versions["2.2"] = new Function(""
 
 plugins.getVisitStart = {
   name : "getVisitStart",
-  versions : {}
+  versions : {},
+  compatible : "untested"
 };
 /*
  * Plugin: getVisitStart v2.0 - returns 1 on first page of visit
@@ -100,7 +103,8 @@ plugins.getVisitStart.versions["2.0"] = new Function("c",""
 
 plugins.downloadLinkHandler = {
   name : "downloadLinkHandler",
-  versions : {}
+  versions : {},
+  compatible : "untested"
 };
 /*
  * Plugin: downloadLinkHandler 0.8 - identify and report download links
@@ -115,7 +119,8 @@ plugins.downloadLinkHandler.versions["0.8"] = new Function("p","e",""
 
 plugins.manageVars = {
   name : "Utility: manageVars",
-  versions : {}
+  versions : {},
+  compatible : "requires update"
 };
 /*
  * Utility manageVars v1.4 - clear variable values (requires split 1.5)
@@ -133,7 +138,8 @@ plugins.manageVars.versions["1.4"] = new Function("c","l","f",""
 
 plugins.apl = {
   name : "Utility: apl (append list)",
-  versions : {}
+  versions : {},
+  compatible : true
 };
 /*
  * Plugin Utility: apl v1.1
@@ -146,7 +152,8 @@ plugins.apl.versions["1.1"] = new Function("L","v","d","u",""
 
 plugins.split = {
   name : "Utility Function: split",
-  versions : []
+  versions : [],
+  compatible : true
 };
 /*
  * Utility Function: split v1.5 - split a string (JS 1.0 compatible)
@@ -158,7 +165,8 @@ plugins.split.versions["1.5"] = new Function("l","d",""
 
 plugins.getQueryParam = {
   name : "getQueryParam",
-  versions : []
+  versions : [],
+  compatible : "requires update"
 };
 /*
  * Plugin: getQueryParam 2.4
@@ -170,43 +178,61 @@ plugins.getQueryParam.versions["2.4"] = new Function("p","d","u","h",""
 +"')>-1?t.substring(0,t.indexOf('#')):t;}if(t)v+=v?d+t:t;p=p.substrin"
 +"g(i==p.length?i:i+1)}return v");
 
-// /*
-//  * Plugin: getValOnce_v1.1
-//  */
-// plugins.getValOnce.versions[] = new Function("v","c","e","t",""
-// +"var s=this,a=new Date,v=v?v:'',c=c?c:'s_gvo',e=e?e:0,i=t=='m'?6000"
-// +"0:86400000;k=s.c_r(c);if(v){a.setTime(a.getTime()+e*i);s.c_w(c,v,e"
-// +"==0?0:a);}return v==k?'':v");
-// /*
-//  * Plugin: getNewRepeat 1.2 - Returns whether user is new or repeat
-//  */
-// plugins.getNewRepeat.versions[] = new Function("d","cn",""
-// +"var s=this,e=new Date(),cval,sval,ct=e.getTime();d=d?d:30;cn=cn?cn:"
-// +"'s_nr';e.setTime(ct+d*24*60*60*1000);cval=s.c_r(cn);if(cval.length="
-// +"=0){s.c_w(cn,ct+'-New',e);return'New';}sval=s.split(cval,'-');if(ct"
-// +"-sval[0]<30*60*1000&&sval[1]=='New'){s.c_w(cn,ct+'-New',e);return'N"
-// +"ew';}else{s.c_w(cn,ct+'-Repeat',e);return'Repeat';}");
-// /*
-//  * Plugin: getTimeToComplete 0.4 - return the time from start to stop
-//  */
-// plugins.getTimeToComplete.versions[] = new Function("v","cn","e",""
-// +"var s=this,d=new Date,x=d,k;if(!s.ttcr){e=e?e:0;if(v=='start'||v=='"
-// +"stop')s.ttcr=1;x.setTime(x.getTime()+e*86400000);if(v=='start'){s.c"
-// +"_w(cn,d.getTime(),e?x:0);return '';}if(v=='stop'){k=s.c_r(cn);if(!s"
-// +".c_w(cn,'',d)||!k)return '';v=(d.getTime()-k)/1000;var td=86400,th="
-// +"3600,tm=60,r=5,u,un;if(v>td){u=td;un='days';}else if(v>th){u=th;un="
-// +"'hours';}else if(v>tm){r=2;u=tm;un='minutes';}else{r=.2;u=1;un='sec"
-// +"onds';}v=v*r/u;return (Math.round(v)/r)+' '+un;}}return '';");
-// /*
-//  * DynamicObjectIDs v1.4: Setup Dynamic Object IDs based on URL
-//  */
-// plugins.setupDynamicObjectIDs.versions[] = new Function(""
-// +"var s=this;if(!s.doi){s.doi=1;if(s.apv>3&&(!s.isie||!s.ismac||s.apv"
-// +">=5)){if(s.wd.attachEvent)s.wd.attachEvent('onload',s.setOIDs);else"
-// +" if(s.wd.addEventListener)s.wd.addEventListener('load',s.setOIDs,fa"
-// +"lse);else{s.doiol=s.wd.onload;s.wd.onload=s.setOIDs}}s.wd.s_semapho"
-// +"re=1}");
-// plugins.setOIDs.versions[] = new Function("e",""
+plugins.getValOnce = {
+  name : "getValOnce",
+  versions : [],
+  compatible : "untested"
+};
+/*
+ * Plugin: getValOnce_v1.1
+ */
+plugins.getValOnce.versions["1.1"] = new Function("v","c","e","t",""
++"var s=this,a=new Date,v=v?v:'',c=c?c:'s_gvo',e=e?e:0,i=t=='m'?6000"
++"0:86400000;k=s.c_r(c);if(v){a.setTime(a.getTime()+e*i);s.c_w(c,v,e"
++"==0?0:a);}return v==k?'':v");
+
+plugins.getNewRepeat = {
+  name : "getNewRepeat",
+  versions : [],
+  compatible : true
+};
+/*
+ * Plugin: getNewRepeat 1.2 - Returns whether user is new or repeat
+ */
+plugins.getNewRepeat.versions["1.2"] = new Function("d","cn",""
++"var s=this,e=new Date(),cval,sval,ct=e.getTime();d=d?d:30;cn=cn?cn:"
++"'s_nr';e.setTime(ct+d*24*60*60*1000);cval=s.c_r(cn);if(cval.length="
++"=0){s.c_w(cn,ct+'-New',e);return'New';}sval=s.split(cval,'-');if(ct"
++"-sval[0]<30*60*1000&&sval[1]=='New'){s.c_w(cn,ct+'-New',e);return'N"
++"ew';}else{s.c_w(cn,ct+'-Repeat',e);return'Repeat';}");
+
+plugins.getTimeToComplete = {
+  name : "getTimeToComplete",
+  versions : [],
+  compatible : true
+};
+/*
+ * Plugin: getTimeToComplete 0.4 - return the time from start to stop
+ */
+plugins.getTimeToComplete.versions["0.4"] = new Function("v","cn","e",""
++"var s=this,d=new Date,x=d,k;if(!s.ttcr){e=e?e:0;if(v=='start'||v=='"
++"stop')s.ttcr=1;x.setTime(x.getTime()+e*86400000);if(v=='start'){s.c"
++"_w(cn,d.getTime(),e?x:0);return '';}if(v=='stop'){k=s.c_r(cn);if(!s"
++".c_w(cn,'',d)||!k)return '';v=(d.getTime()-k)/1000;var td=86400,th="
++"3600,tm=60,r=5,u,un;if(v>td){u=td;un='days';}else if(v>th){u=th;un="
++"'hours';}else if(v>tm){r=2;u=tm;un='minutes';}else{r=.2;u=1;un='sec"
++"onds';}v=v*r/u;return (Math.round(v)/r)+' '+un;}}return '';");
+
+/*
+ * DynamicObjectIDs v1.4: Setup Dynamic Object IDs based on URL
+ */
+plugins.setupDynamicObjectIDs.versions["1.4"] = new Function(""
++"var s=this;if(!s.doi){s.doi=1;if(s.apv>3&&(!s.isie||!s.ismac||s.apv"
++">=5)){if(s.wd.attachEvent)s.wd.attachEvent('onload',s.setOIDs);else"
++" if(s.wd.addEventListener)s.wd.addEventListener('load',s.setOIDs,fa"
++"lse);else{s.doiol=s.wd.onload;s.wd.onload=s.setOIDs}}s.wd.s_semapho"
++"re=1}");
+// s.setOIDs=new Function("e",""
 // +"var s=s_c_il["+s._in+"],b=s.eh(s.wd,'onload'),o='onclick',x,l,u,c,i"
 // +",a=new Array;if(s.doiol){if(b)s[b]=s.wd[b];s.doiol(e)}if(s.d.links)"
 // +"{for(i=0;i<s.d.links.length;i++){l=s.d.links[i];c=l[o]?''+l[o]:'';b"
@@ -217,7 +243,7 @@ plugins.getQueryParam.versions["2.4"] = new Function("p","d","u","h",""
 // +")x='var x=\".tl(\";';x+='s_objectID=\"'+u+'_'+a[u]+'\";return this."
 // +"s_oc?this.s_oc(e):true';if(s.isns&&s.apv>=5)l.setAttribute(o,x);l[o"
 // +"]=new Function('e',x)}}}s.wd.s_semaphore=0;return true");
-// /*
+
 //  * Plugin Utility: Replace v1.0
 //  */
 // plugins.repl.versions[] = new Function("x","o","n",""
@@ -338,38 +364,7 @@ plugins.getQueryParam.versions["2.4"] = new Function("p","d","u","h",""
 // var s_sv_gather_root = "survey.122.2o7.net/survey/gather"
 
 
-// s.loadModule("Media")
-// s.Media.playerName="Vodafone Video Player";
 
-// s.Media.trackMilestones = "50";
-// s.Media.segmentByMilestones = true;
-// s.Media.trackUsingContextData = true;
-// s.Media.contextDataMapping = {
-//   "a.media.name":"eVar70,prop44",
-//   "a.media.segment":"eVar60",
-//   "a.media.timePlayed":"event64",
-//   "a.media.view":"event62",
-//   "a.media.segmentView":"event20",
-//   "a.media.complete":"event63",
-//   "a.media.milestones":{
-//     50: "event21"
-//   }
-// };
-
-// s.Media.trackEvents="event64,event63,event62,event20,event21";
-// s.Media.trackVars="events,eVar70,prop44,eVar60";
-// s.Media.completeByCloseOffset = true;
-// s.Media.completeCloseOffsetThreshold = 1;
-
-
-
-// /* WARNING: Changing any of the below variables will cause drastic
-// changes to how your visitor data is collected.  Changes should only be
-// made when instructed to do so by your account manager.*/
-// s.visitorNamespace="vodafoneuk"
-// s.trackingServer="metrics.vodafone.co.uk"
-// s.trackingServerSecure="smetrics.vodafone.co.uk"
-// s.dc="122"
 
 // /****************************** MODULES *****************************/
 // /* Module: Survey */
@@ -461,6 +456,15 @@ plugins.getQueryParam.versions["2.4"] = new Function("p","d","u","h",""
     tealiumTools.sendError("Error",
       "SiteCatalyst is not found on the current webpage.");
     return;
+  }
+
+  // 2. Record any functions from the 's' object that are not recognised
+  // as candidate plugins
+  var unknown_plugins = [];
+  for (var key in s) {
+    if (s.hasOwnProperty(key)) {
+      unknown_plugins.push(key);
+    }
   }
 
   // 2. Check for plugins
